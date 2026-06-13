@@ -173,6 +173,13 @@ sudo systemctl restart nginx
 4. Preview: `npm run dev`
 5. Build: `npm run build`
 6. Re-deploy: `./deploy.sh`
+
+### 🔗 Setting up link previews (Open Graph):
+When sharing the portfolio URL in messaging apps (Telegram, WhatsApp, etc.), a preview card with image will appear. The domain must be configured:
+
+1. Edit `astro.config.mjs` — change `'https://lyhor.su10.xyz'` to **your domain**
+2. Run `./deploy.sh` to rebuild with the correct URL
+3. Share your domain — the preview card will show automatically
  
 ### Adding new portfolio images:
 1. Place images in `public/images/`
