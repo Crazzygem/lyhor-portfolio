@@ -38,6 +38,7 @@ Open **http://localhost:4321**
 │   ├── pages/index.astro    ← Main single page
 │   └── styles/global.css    ← Tailwind + custom styles
 ├── Dockerfile               ← Multi-stage Docker build
+├── docker-compose.yml       ← Single-command deployment
 ├── nginx.conf               ← Production Nginx config
 ├── .gitignore
 └── .dockerignore
@@ -83,24 +84,23 @@ graph TD
 - **Stage 2 (Serve):** Takes only the built files + lightweight Nginx Alpine (~25MB final image)
 - The result is a **tiny, production-ready Docker image** (~32MB) with zero runtime dependencies
 
-### Build & Run
+### Build & Deploy (One Command)
 
 ```bash
-# Build the Docker image
-docker build -t lyhor-portfolio .
+# Build and start (builds image + runs container)
+docker compose up -d
 
-# Run the container (serves on http://localhost:80)
-docker run -d -p 80:80 --restart unless-stopped lyhor-portfolio
-
-# Run on a different port (e.g., 8080)
-docker run -d -p 8080:80 --restart unless-stopped lyhor-portfolio
+# View logs
+docker compose logs -f
 
 # Stop the container
-docker stop <container-id>
+docker compose down
 
-# View running containers
-docker ps
+# Rebuild after code changes
+docker compose up -d --build
 ```
+
+Your portfolio will be available at **http://localhost:629**
 
 ### Nginx Configuration
 
@@ -117,24 +117,23 @@ The custom `nginx.conf` handles:
 
 ## ☁️ Deploy to Ubuntu LXC Container
 
-### Option A: Docker (Recommended)
+### Option A: Docker Compose (Recommended)
 
 ```bash
-# 1. Install Docker
+# 1. Install Docker + Compose plugin
 sudo apt update
-sudo apt install -y docker.io
+sudo apt install -y docker.io docker-compose-plugin
 sudo systemctl enable --now docker
 
 # 2. Clone the repo
-git clone https://github.com/YOUR_USER/lyhor-portfolio.git
+git clone https://github.com/Crazzygem/lyhor-portfolio.git
 cd lyhor-portfolio
 
-# 3. Build & run
-docker build -t lyhor-portfolio .
-docker run -d -p 80:80 --restart unless-stopped lyhor-portfolio
+# 3. Build & run (single command)
+docker compose up -d
 
 # 4. Verify
-curl http://localhost
+curl http://localhost:629
 ```
 
 ### Option B: Direct Nginx (No Docker)
@@ -165,12 +164,12 @@ sudo systemctl restart nginx
 3. Edit components in `src/components/`
 4. Preview: `npm run dev`
 5. Build: `npm run build`
-6. Re-deploy: `docker build -t lyhor-portfolio . && docker run -d -p 80:80 lyhor-portfolio`
-
+6. Re-deploy: `docker compose up -d --build`
+ 
 ### Adding new portfolio images:
 1. Place images in `public/images/`
 2. Edit `src/components/Work.astro` — add the filename to the `projects` array
-3. Rebuild & redeploy
+3. Rebuild & redeploy: `docker compose up -d --build`
 
 ---
 
@@ -181,9 +180,9 @@ sudo systemctl restart nginx
 | `npm run dev` | Start dev server (localhost:4321) |
 | `npm run build` | Build to `dist/` |
 | `npm run preview` | Preview built site |
-| `docker build -t lyhor-portfolio .` | Build Docker image |
-| `docker run -d -p 80:80 lyhor-portfolio` | Run container |
-| `docker ps` | List running containers |
-| `docker stop <id>` | Stop container |
+| `docker compose up -d` | Build + run container on port 629 |
+| `docker compose up -d --build` | Rebuild + restart after changes |
+| `docker compose down` | Stop container |
+| `docker compose logs -f` | Follow container logs |
 
 ---
