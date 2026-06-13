@@ -1,0 +1,22 @@
+{
+  "id": "architecture-refactor-07",
+  "seq": "07",
+  "title": "Add .body-text utility class (text-lg text-primary-600 leading-relaxed) to global.css",
+  "status": "pending",
+  "depends_on": [],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/styles/global.css",
+    "src/components/About.astro"
+  ],
+  "acceptance_criteria": [
+    ".body-text utility class added to global.css with properties: text-lg, text-primary-600, leading-relaxed",
+    "Class is placed in a logical location within the file",
+    "No other CSS rules modified"
+  ],
+  "deliverables": [
+    "src/styles/global.css (modified)"
+  ]
+}

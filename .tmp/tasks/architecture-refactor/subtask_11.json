@@ -1,0 +1,21 @@
+{
+  "id": "architecture-refactor-11",
+  "seq": "11",
+  "title": "Update index.astro: remove inline IntersectionObserver script",
+  "status": "pending",
+  "depends_on": ["01"],
+  "parallel": true,
+  "suggested_agent": "OpenFrontendSpecialist",
+  "context_files": [],
+  "reference_files": [
+    "src/pages/index.astro"
+  ],
+  "acceptance_criteria": [
+    "Inline IntersectionObserver <script> block removed from index.astro",
+    "No other content or structure modified",
+    "Scroll fade-in animations still work via animations.js"
+  ],
+  "deliverables": [
+    "src/pages/index.astro (modified)"
+  ]
+}

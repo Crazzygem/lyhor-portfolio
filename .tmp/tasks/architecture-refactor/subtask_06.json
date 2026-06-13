@@ -1,0 +1,21 @@
+{
+  "id": "architecture-refactor-06",
+  "seq": "06",
+  "title": "Remove unused .text-muted class from src/styles/global.css",
+  "status": "pending",
+  "depends_on": [],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/styles/global.css"
+  ],
+  "acceptance_criteria": [
+    ".text-muted class definition removed from global.css",
+    "No other CSS rules modified",
+    "Visual appearance unchanged (class was unused)"
+  ],
+  "deliverables": [
+    "src/styles/global.css (modified)"
+  ]
+}

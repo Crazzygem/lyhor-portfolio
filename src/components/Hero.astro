@@ -3,7 +3,7 @@
 
 <section id="home" class="section min-h-screen flex items-center justify-center bg-gradient-to-b from-primary-50 to-white">
   <div class="container text-center">
-    <div class="fade-in">
+    <div class="fade-in" data-animate="fade-in">
       <p class="text-primary-500 font-medium mb-4 tracking-wider uppercase">Graphic Designer</p>
       <h1 class="text-5xl md:text-7xl font-bold text-primary-900 mb-6">
         Kimhornn Lyhor
@@ -23,14 +23,3 @@
   </div>
 </section>
 
-<script>
-  // Fade-in animation on load
-  document.addEventListener('DOMContentLoaded', () => {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach((el, index) => {
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, index * 100);
-    });
-  });
-</script>

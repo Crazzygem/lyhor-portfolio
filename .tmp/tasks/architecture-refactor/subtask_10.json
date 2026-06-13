@@ -1,0 +1,21 @@
+{
+  "id": "architecture-refactor-10",
+  "seq": "10",
+  "title": "Update Navbar.astro: remove inline script, add data-nav-section attributes to nav links",
+  "status": "pending",
+  "depends_on": ["01"],
+  "parallel": true,
+  "suggested_agent": "OpenFrontendSpecialist",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Navbar.astro"
+  ],
+  "acceptance_criteria": [
+    "Inline <script> block removed from Navbar.astro",
+    "Nav links have data-nav-section attributes matching section IDs (home, about, skills, work, experience, contact)",
+    "No visual or behavioral changes to navbar"
+  ],
+  "deliverables": [
+    "src/components/Navbar.astro (modified)"
+  ]
+}

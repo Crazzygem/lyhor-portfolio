@@ -1,12 +1,5 @@
 ---
-const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Work', href: '#work' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Contact', href: '#contact' },
-];
+import navItems from '../data/nav.json';
 ---
 
 <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-primary-100">
@@ -23,9 +16,9 @@ const navItems = [
             <a 
               href={item.href}
               class="text-primary-600 hover:text-primary-800 font-medium transition-colors duration-300 nav-link"
-              data-section={item.href.slice(1)}
+              data-nav-section={item.href.slice(1)}
             >
-              {item.name}
+              {item.label}
             </a>
           </li>
         ))}
@@ -51,8 +44,9 @@ const navItems = [
             <a 
               href={item.href}
               class="block text-primary-600 hover:text-primary-800 font-medium transition-colors duration-300"
+              data-nav-section={item.href.slice(1)}
             >
-              {item.name}
+              {item.label}
             </a>
           </li>
         ))}
@@ -75,32 +69,4 @@ const navItems = [
       mobileMenu?.classList.add('hidden');
     });
   });
-  
-  // Active nav link highlighting
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  const observerOptions = {
-    root: null,
-    rootMargin: '-50% 0px -50% 0px',
-    threshold: 0
-  };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach((link) => {
-          link.classList.remove('text-primary-800', 'font-semibold');
-          link.classList.add('text-primary-600');
-          if (link.getAttribute('data-section') === id) {
-            link.classList.remove('text-primary-600');
-            link.classList.add('text-primary-800', 'font-semibold');
-          }
-        });
-      }
-    });
-  }, observerOptions);
-  
-  sections.forEach((section) => observer.observe(section));
 </script>

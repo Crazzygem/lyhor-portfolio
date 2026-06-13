@@ -1,0 +1,22 @@
+{
+  "id": "architecture-refactor-16",
+  "seq": "16",
+  "title": "Update Experience.astro to import experiences and education from src/data/experience.json",
+  "status": "pending",
+  "depends_on": ["04"],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Experience.astro",
+    "src/data/experience.json"
+  ],
+  "acceptance_criteria": [
+    "Experience.astro imports experiences and education arrays from src/data/experience.json",
+    "Inline arrays removed from Experience.astro",
+    "All visual rendering unchanged"
+  ],
+  "deliverables": [
+    "src/components/Experience.astro (modified)"
+  ]
+}

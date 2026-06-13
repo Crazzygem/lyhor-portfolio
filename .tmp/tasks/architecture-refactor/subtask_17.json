@@ -1,0 +1,22 @@
+{
+  "id": "architecture-refactor-17",
+  "seq": "17",
+  "title": "Update Navbar.astro to import navItems from src/data/nav.json",
+  "status": "pending",
+  "depends_on": ["05"],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Navbar.astro",
+    "src/data/nav.json"
+  ],
+  "acceptance_criteria": [
+    "Navbar.astro imports navItems from src/data/nav.json",
+    "Inline navItems array removed from Navbar.astro",
+    "All visual rendering unchanged"
+  ],
+  "deliverables": [
+    "src/components/Navbar.astro (modified)"
+  ]
+}

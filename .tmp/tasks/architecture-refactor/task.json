@@ -1,0 +1,29 @@
+{
+  "id": "architecture-refactor",
+  "name": "Architecture Refactor — Animation Consolidation, Content Externalization, Dead Code Cleanup",
+  "status": "active",
+  "objective": "Consolidate 3 animation systems into one module, externalize hardcoded data to JSON, clean dead code and CSS, split Contact/Footer",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Hero.astro",
+    "src/components/Navbar.astro",
+    "src/components/About.astro",
+    "src/components/Skills.astro",
+    "src/components/Work.astro",
+    "src/components/Experience.astro",
+    "src/components/Contact.astro",
+    "src/layouts/Layout.astro",
+    "src/pages/index.astro",
+    "src/styles/global.css"
+  ],
+  "exit_criteria": [
+    "npm run build succeeds",
+    "All 3 animation systems consolidated into one module, behavior identical",
+    "Content data externalized to JSON files",
+    "Dead code removed, CSS utilities extracted, Contact/Footer separated",
+    "All changes committed and pushed"
+  ],
+  "subtask_count": 19,
+  "completed_count": 4,
+  "created_at": "2026-06-14T00:00:00Z"
+}

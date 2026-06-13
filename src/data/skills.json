@@ -1,0 +1,17 @@
+{
+  "tools": [
+    { "name": "Photoshop", "icon": "/icons/photoshop.png" },
+    { "name": "Illustrator", "icon": "/icons/illustrator.png" },
+    { "name": "InDesign", "icon": "/icons/indesign.png" },
+    { "name": "Premiere Pro", "icon": "/icons/premiere-pro.png" },
+    { "name": "After Effects", "icon": "/icons/after-effects.png" }
+  ],
+  "softSkills": [
+    "Time Management",
+    "Creative Thinking",
+    "Communication",
+    "Problem Solving",
+    "Attention to Detail",
+    "Team Collaboration"
+  ]
+}

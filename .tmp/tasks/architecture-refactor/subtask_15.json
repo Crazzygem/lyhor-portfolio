@@ -1,0 +1,22 @@
+{
+  "id": "architecture-refactor-15",
+  "seq": "15",
+  "title": "Update Skills.astro to import skills and softSkills from src/data/skills.json",
+  "status": "pending",
+  "depends_on": ["03"],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Skills.astro",
+    "src/data/skills.json"
+  ],
+  "acceptance_criteria": [
+    "Skills.astro imports skills and softSkills arrays from src/data/skills.json",
+    "Inline arrays removed from Skills.astro",
+    "All visual rendering unchanged"
+  ],
+  "deliverables": [
+    "src/components/Skills.astro (modified)"
+  ]
+}

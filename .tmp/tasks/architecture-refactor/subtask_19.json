@@ -1,0 +1,21 @@
+{
+  "id": "architecture-refactor-19",
+  "seq": "19",
+  "title": "Update index.astro: add <Footer /> component after </main>",
+  "status": "pending",
+  "depends_on": ["09", "18"],
+  "parallel": false,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/pages/index.astro"
+  ],
+  "acceptance_criteria": [
+    "Footer.astro imported in index.astro",
+    "<Footer /> component rendered after closing </main> tag",
+    "Visual appearance of footer unchanged compared to original inline version"
+  ],
+  "deliverables": [
+    "src/pages/index.astro (modified)"
+  ]
+}

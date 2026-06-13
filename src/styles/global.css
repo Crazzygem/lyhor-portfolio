@@ -31,8 +31,8 @@
     @apply text-xl md:text-2xl font-semibold mb-4;
   }
   
-  .text-muted {
-    @apply text-primary-500;
+  .body-text {
+    @apply text-lg text-primary-600 leading-relaxed;
   }
   
   .btn {

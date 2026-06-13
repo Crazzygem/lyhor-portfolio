@@ -1,0 +1,24 @@
+{
+  "id": "architecture-refactor-05",
+  "seq": "05",
+  "title": "Create src/data/nav.json from Navbar.astro navItems array",
+  "status": "completed",
+  "agent_id": "coder-agent",
+  "started_at": "2026-06-14T00:00:00Z",
+  "completed_at": "2026-06-14T00:00:00Z",
+  "depends_on": [],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Navbar.astro"
+  ],
+  "acceptance_criteria": [
+    "nav.json contains the exact navItems array extracted from Navbar.astro",
+    "JSON is valid and parseable",
+    "All nav item labels and href paths preserved exactly"
+  ],
+  "deliverables": [
+    "src/data/nav.json"
+  ]
+}

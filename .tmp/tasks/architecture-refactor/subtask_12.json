@@ -1,0 +1,21 @@
+{
+  "id": "architecture-refactor-12",
+  "seq": "12",
+  "title": "Update Hero.astro: remove inline DOMContentLoaded script, add data-animate='fade-in' to wrapper",
+  "status": "pending",
+  "depends_on": ["01"],
+  "parallel": true,
+  "suggested_agent": "OpenFrontendSpecialist",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Hero.astro"
+  ],
+  "acceptance_criteria": [
+    "Inline DOMContentLoaded <script> block removed from Hero.astro",
+    "Hero wrapper element has data-animate='fade-in' attribute",
+    "Hero section still animates immediately on load (handled by animations.js)"
+  ],
+  "deliverables": [
+    "src/components/Hero.astro (modified)"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "architecture-refactor-02",
+  "seq": "02",
+  "title": "Create src/data/projects.json from Work.astro projects array",
+  "status": "completed",
+  "agent_id": "coder-agent",
+  "started_at": "2026-06-14T00:00:00Z",
+  "completed_at": "2026-06-14T00:00:00Z",
+  "depends_on": [],
+  "parallel": true,
+  "suggested_agent": "CoderAgent",
+  "context_files": [],
+  "reference_files": [
+    "src/components/Work.astro"
+  ],
+  "acceptance_criteria": [
+    "projects.json contains the exact same data as Work.astro's inline projects array",
+    "JSON is valid and parseable",
+    "Preserves all existing project fields including image paths, titles, descriptions, links"
+  ],
+  "deliverables": [
+    "src/data/projects.json"
+  ]
+}

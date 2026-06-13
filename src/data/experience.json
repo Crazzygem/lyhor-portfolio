@@ -1,0 +1,40 @@
+{
+  "experiences": [
+    {
+      "title": "Graphic Designer",
+      "company": "Chea Chamnan Laboratoire Co.,ltd",
+      "period": "Aug 2024 – Present",
+      "description": [
+        "Website Design: Designed, developed, and launched the company website using WordPress",
+        "New Branding Design: Created modern and consistent visual identities for new product lines",
+        "Poster Design: Designed professional posters, marketing materials, and event visuals",
+        "Document Design: Created branded templates for internal use"
+      ]
+    },
+    {
+      "title": "Accountant (Data Entry)",
+      "company": "Chea Chamnan Laboratoire Co.,ltd",
+      "period": "Nov 2023 – Aug 2024",
+      "description": [
+        "Managed accounting system with accurate data entry",
+        "Maintained clear records of invoices, receipts, and transactions",
+        "Monitored product stock levels and conducted monthly audits",
+        "Managed digital and physical records for finance and logistics"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Management Information Systems",
+      "school": "SETEC Institute",
+      "period": "2023 – Present (Expected Graduation: 2026)",
+      "description": "Studies in database management, systems analysis, information systems, and data analytics."
+    },
+    {
+      "degree": "High School",
+      "school": "Prey Deum Thneung High School",
+      "period": "2018 – 2021",
+      "description": "Graduated with outstanding grade B."
+    }
+  ]
+}

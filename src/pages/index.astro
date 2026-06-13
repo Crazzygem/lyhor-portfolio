@@ -7,6 +7,7 @@ import Skills from '../components/Skills.astro';
 import Work from '../components/Work.astro';
 import Experience from '../components/Experience.astro';
 import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Kimhornn Lyhor | Graphic Designer Portfolio">
@@ -19,25 +20,6 @@ import Contact from '../components/Contact.astro';
     <Experience />
     <Contact />
   </main>
+  <Footer />
 </Layout>
 
-<script>
-  // Intersection Observer for fade-in animations
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.fade-in').forEach((el) => {
-    observer.observe(el);
-  });
-</script>
