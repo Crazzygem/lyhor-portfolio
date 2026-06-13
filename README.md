@@ -69,13 +69,13 @@ graph TD
 
     style S1 fill:#1e3a5f,stroke:#0f2440,color:#ffffff
     style S2 fill:#1b4332,stroke:#0d2818,color:#ffffff
-    style A fill:#e8f0fe,stroke:#1e3a5f
-    style B fill:#e8f0fe,stroke:#1e3a5f
-    style C fill:#e8f0fe,stroke:#1e3a5f
-    style D fill:#c7d9f7,stroke:#1e3a5f
-    style E fill:#d8f3dc,stroke:#1b4332
-    style F fill:#d8f3dc,stroke:#1b4332
-    style G fill:#b7e4c7,stroke:#1b4332
+    style A fill:#e8f0fe,stroke:#1e3a5f,color:#000000
+    style B fill:#e8f0fe,stroke:#1e3a5f,color:#000000
+    style C fill:#e8f0fe,stroke:#1e3a5f,color:#000000
+    style D fill:#c7d9f7,stroke:#1e3a5f,color:#000000
+    style E fill:#d8f3dc,stroke:#1b4332,color:#000000
+    style F fill:#d8f3dc,stroke:#1b4332,color:#000000
+    style G fill:#b7e4c7,stroke:#1b4332,color:#000000
 ```
 
 **Key points:**
