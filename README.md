@@ -67,15 +67,15 @@ graph TD
         F --> G["• Gzip compression<br/>• Image caching (7-30 days)<br/>• Security headers"]
     end
 
-    style S1 fill:#e8f4f8,stroke:#2b6cb0,color:#1a365d
-    style S2 fill:#f0fff4,stroke:#276749,color:#22543d
-    style A fill:#bee3f8,stroke:#2b6cb0
-    style B fill:#bee3f8,stroke:#2b6cb0
-    style C fill:#bee3f8,stroke:#2b6cb0
-    style D fill:#90cdf4,stroke:#2b6cb0
-    style E fill:#c6f6d5,stroke:#276749
-    style F fill:#c6f6d5,stroke:#276749
-    style G fill:#9ae6b4,stroke:#276749
+    style S1 fill:#1e3a5f,stroke:#0f2440,color:#ffffff
+    style S2 fill:#1b4332,stroke:#0d2818,color:#ffffff
+    style A fill:#e8f0fe,stroke:#1e3a5f
+    style B fill:#e8f0fe,stroke:#1e3a5f
+    style C fill:#e8f0fe,stroke:#1e3a5f
+    style D fill:#c7d9f7,stroke:#1e3a5f
+    style E fill:#d8f3dc,stroke:#1b4332
+    style F fill:#d8f3dc,stroke:#1b4332
+    style G fill:#b7e4c7,stroke:#1b4332
 ```
 
 **Key points:**
