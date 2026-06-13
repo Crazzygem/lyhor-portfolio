@@ -1,6 +1,6 @@
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Respect reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion) {
     document.querySelectorAll('[data-animate="fade-in"]').forEach(function (el) {
@@ -28,13 +28,11 @@
   });
 
   // Hero: trigger immediately on load
-  document.addEventListener('DOMContentLoaded', function () {
-    var hero = document.querySelector('[data-animate="fade-in"]');
-    if (hero) {
-      hero.classList.add('visible');
-      fadeObserver.unobserve(hero);
-    }
-  });
+  var hero = document.querySelector('[data-animate="fade-in"]');
+  if (hero) {
+    hero.classList.add('visible');
+    fadeObserver.unobserve(hero);
+  }
 
   // Nav link highlighting observer
   var navObserver = new IntersectionObserver(
@@ -60,4 +58,4 @@
   document.querySelectorAll('section[id]').forEach(function (section) {
     navObserver.observe(section);
   });
-})();
+});
