@@ -1,0 +1,31 @@
+node_modules/
+dist/
+.astro/
+
+# Large raw assets (keep source, not copies)
+Lyhor's Portfolio.pdf
+Curriculum vitae -Lyhor-Kimhornn.pdf
+
+# Root copies of icons (kept in public/icons/)
+/after-effects.png
+/illustrator.png
+/indesign.png
+/photoshop.png
+/premiere-pro.png
+
+# Temp images folder (raw extracted PDF pages)
+/images/
+
+# Raw PDF page extracts (not used by the site)
+/public/images/portfolio-page-*
+/public/images/final/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

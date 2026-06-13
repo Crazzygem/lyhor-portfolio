@@ -1,0 +1,53 @@
+---
+const skills = [
+  { name: 'Photoshop', icon: '/icons/photoshop.png' },
+  { name: 'Illustrator', icon: '/icons/illustrator.png' },
+  { name: 'InDesign', icon: '/icons/indesign.png' },
+  { name: 'Premiere Pro', icon: '/icons/premiere-pro.png' },
+  { name: 'After Effects', icon: '/icons/after-effects.png' },
+];
+
+const softSkills = [
+  'Time Management',
+  'Creative Thinking',
+  'Communication',
+  'Problem Solving',
+  'Attention to Detail',
+  'Team Collaboration',
+];
+---
+
+<section id="skills" class="section bg-primary-50">
+  <div class="container">
+    <div class="fade-in">
+      <h2 class="heading text-center">Skills</h2>
+      
+      <!-- Adobe Creative Suite -->
+      <div class="mb-12">
+        <h3 class="subheading text-center text-primary-700 mb-8">Adobe Creative Suite</h3>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+          {skills.map((skill) => (
+            <div class="card p-6 text-center hover:shadow-xl">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-xl overflow-hidden">
+                <img src={skill.icon} alt={skill.name} class="w-full h-full object-contain" />
+              </div>
+              <p class="font-medium text-primary-700">{skill.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Soft Skills -->
+      <div>
+        <h3 class="subheading text-center text-primary-700 mb-8">Core Competencies</h3>
+        <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          {softSkills.map((skill) => (
+            <span class="px-4 py-2 bg-white rounded-full text-primary-600 font-medium shadow-sm hover:shadow-md transition-shadow duration-300">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

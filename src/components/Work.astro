@@ -1,0 +1,35 @@
+---
+const projects = [
+  '/images/aironix-80-orange.png',
+  '/images/blockgas-pink.png',
+  '/images/carvapress-12.5.png',
+  '/images/ila-c-500.png',
+  '/images/ilavic-tab.png',
+  '/images/Lyhor\'s Portfolio_Page_07.jpg',
+  '/images/micrapain.png',
+  '/images/rhinomine-300.png',
+  '/images/telmac-80.png',
+];
+---
+
+<section id="work" class="section bg-white">
+  <div class="container">
+    <div class="fade-in">
+      <h2 class="heading text-center">My Work</h2>
+      <p class="text-center text-primary-500 mb-12 max-w-2xl mx-auto">
+        A selection of packaging and branding projects showcasing creative design solutions
+      </p>
+      
+      <!-- Masonry Grid -->
+      <div class="masonry">
+        {projects.map((image) => (
+          <div class="masonry-item">
+            <div class="card overflow-hidden">
+              <img src={image} alt="Portfolio work" class="w-full h-auto" loading="lazy" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

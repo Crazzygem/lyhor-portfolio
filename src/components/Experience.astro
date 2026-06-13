@@ -1,0 +1,94 @@
+---
+const experiences = [
+  {
+    title: 'Graphic Designer',
+    company: 'Chea Chamnan Laboratoire Co.,ltd',
+    period: 'Aug 2024 – Present',
+    description: [
+      'Website Design: Designed, developed, and launched the company website using WordPress',
+      'New Branding Design: Created modern and consistent visual identities for new product lines',
+      'Poster Design: Designed professional posters, marketing materials, and event visuals',
+      'Document Design: Created branded templates for internal use',
+    ],
+  },
+  {
+    title: 'Accountant (Data Entry)',
+    company: 'Chea Chamnan Laboratoire Co.,ltd',
+    period: 'Nov 2023 – Aug 2024',
+    description: [
+      'Managed accounting system with accurate data entry',
+      'Maintained clear records of invoices, receipts, and transactions',
+      'Monitored product stock levels and conducted monthly audits',
+      'Managed digital and physical records for finance and logistics',
+    ],
+  },
+];
+
+const education = [
+  {
+    degree: 'Bachelor of Management Information Systems',
+    school: 'SETEC Institute',
+    period: '2023 – Present (Expected Graduation: 2026)',
+    description: 'Studies in database management, systems analysis, information systems, and data analytics.',
+  },
+  {
+    degree: 'High School',
+    school: 'Prey Deum Thneung High School',
+    period: '2018 – 2021',
+    description: 'Graduated with outstanding grade B.',
+  },
+];
+---
+
+<section id="experience" class="section bg-primary-50">
+  <div class="container">
+    <div class="fade-in">
+      <h2 class="heading text-center">Experience</h2>
+      
+      <!-- Work Experience -->
+      <div class="mb-16">
+        <h3 class="subheading text-primary-700 mb-8">Work Experience</h3>
+        <div class="space-y-8">
+          {experiences.map((exp) => (
+            <div class="card p-6 md:p-8">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                  <h4 class="text-xl font-semibold text-primary-800">{exp.title}</h4>
+                  <p class="text-primary-500">{exp.company}</p>
+                </div>
+                <span class="text-sm text-primary-400 mt-2 md:mt-0">{exp.period}</span>
+              </div>
+              <ul class="space-y-2">
+                {exp.description.map((item) => (
+                  <li class="flex items-start text-primary-600">
+                    <span class="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Education -->
+      <div>
+        <h3 class="subheading text-primary-700 mb-8">Education</h3>
+        <div class="space-y-6">
+          {education.map((edu) => (
+            <div class="card p-6">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div>
+                  <h4 class="text-lg font-semibold text-primary-800">{edu.degree}</h4>
+                  <p class="text-primary-500">{edu.school}</p>
+                  <p class="text-primary-400 text-sm mt-1">{edu.description}</p>
+                </div>
+                <span class="text-sm text-primary-400 mt-2 md:mt-0">{edu.period}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
