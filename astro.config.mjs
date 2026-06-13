@@ -6,6 +6,6 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   // Set SITE_URL env var at build time for correct OG link previews.
   // Default: http://localhost:629 for local dev/testing.
-  site: process.env.SITE_URL || 'http://localhost:629',
+  site: process.env.SITE_URL || 'https://lyhor.su10.xyz',
   integrations: [tailwind()],
 });
