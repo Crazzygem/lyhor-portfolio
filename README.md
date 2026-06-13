@@ -51,33 +51,31 @@ Open **http://localhost:4321**
 
 The Docker setup uses a **multi-stage build** (two phases):
 
-```
-┌──────────────────────────────────────────────────┐
-│ Stage 1: BUILD (node:22-alpine)                  │
-│                                                   │
-│   package.json + source code                      │
-│         │                                         │
-│         ▼                                         │
-│   npm ci --legacy-peer-deps  (install deps)       │
-│         │                                         │
-│         ▼                                         │
-│   npm run build              (ASTRO → static HTML)│
-│         │                                         │
-│         ▼                                         │
-│   /app/dist/  ──── static files ready ───────┐    │
-└──────────────────────────────────────────────┼────┘
-                                               │
-┌──────────────────────────────────────────────┼────┐
-│ Stage 2: SERVE (nginx:alpine)                │    │
-│                                               │    │
-│   COPY /app/dist  →  /usr/share/nginx/html ◄─┘    │
-│         │                                         │
-│         ▼                                         │
-│   Nginx serves static files on port 80             │
-│   - Gzip compression enabled                      │
-│   - Image caching (7-30 days)                     │
-│   - Security headers added                        │
-└──────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph S1["Stage 1: BUILD (node:22-alpine)"]
+        A["package.json + source code"] --> B["npm ci --legacy-peer-deps"]
+        B --> C["npm run build"]
+        C --> D["/app/dist/ (static HTML files)"]
+    end
+
+    D -->|"COPY --from=build"| E
+
+    subgraph S2["Stage 2: SERVE (nginx:alpine)"]
+        E["Static files in /usr/share/nginx/html"]
+        E --> F["Nginx serves on port 80"]
+        F --> G["• Gzip compression<br/>• Image caching (7-30 days)<br/>• Security headers"]
+    end
+
+    style S1 fill:#e8f4f8,stroke:#2b6cb0,color:#1a365d
+    style S2 fill:#f0fff4,stroke:#276749,color:#22543d
+    style A fill:#bee3f8,stroke:#2b6cb0
+    style B fill:#bee3f8,stroke:#2b6cb0
+    style C fill:#bee3f8,stroke:#2b6cb0
+    style D fill:#90cdf4,stroke:#2b6cb0
+    style E fill:#c6f6d5,stroke:#276749
+    style F fill:#c6f6d5,stroke:#276749
+    style G fill:#9ae6b4,stroke:#276749
 ```
 
 **Key points:**
