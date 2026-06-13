@@ -39,6 +39,7 @@ Open **http://localhost:4321**
 │   └── styles/global.css    ← Tailwind + custom styles
 ├── Dockerfile               ← Multi-stage Docker build
 ├── docker-compose.yml       ← Single-command deployment
+├── deploy.sh                ← Deploy script with IP/port info
 ├── nginx.conf               ← Production Nginx config
 ├── .gitignore
 └── .dockerignore
@@ -87,13 +88,20 @@ graph TD
 ### Build & Deploy (One Command)
 
 ```bash
-# Build and start (builds image + runs container)
+# Build and start (builds image + runs container, shows IP and port)
+./deploy.sh
+```
+
+Or using Docker Compose directly:
+
+```bash
+# Build and start
 docker compose up -d
 
 # View logs
 docker compose logs -f
 
-# Stop the container
+# Stop
 docker compose down
 
 # Rebuild after code changes
@@ -130,7 +138,7 @@ git clone https://github.com/Crazzygem/lyhor-portfolio.git
 cd lyhor-portfolio
 
 # 3. Build & run (single command)
-docker compose up -d
+./deploy.sh
 
 # 4. Verify
 curl http://localhost:629
@@ -164,12 +172,12 @@ sudo systemctl restart nginx
 3. Edit components in `src/components/`
 4. Preview: `npm run dev`
 5. Build: `npm run build`
-6. Re-deploy: `docker compose up -d --build`
+6. Re-deploy: `./deploy.sh`
  
 ### Adding new portfolio images:
 1. Place images in `public/images/`
 2. Edit `src/components/Work.astro` — add the filename to the `projects` array
-3. Rebuild & redeploy: `docker compose up -d --build`
+3. Rebuild & redeploy: `./deploy.sh`
 
 ---
 
@@ -180,6 +188,7 @@ sudo systemctl restart nginx
 | `npm run dev` | Start dev server (localhost:4321) |
 | `npm run build` | Build to `dist/` |
 | `npm run preview` | Preview built site |
+| `./deploy.sh` | Build + run + show IP and port |
 | `docker compose up -d` | Build + run container on port 629 |
 | `docker compose up -d --build` | Rebuild + restart after changes |
 | `docker compose down` | Stop container |
