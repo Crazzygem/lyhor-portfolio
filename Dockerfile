@@ -1,7 +1,5 @@
 # Stage 1: Build the Astro site
 FROM node:22-alpine AS build
-ARG SITE_URL
-ENV SITE_URL=${SITE_URL:-http://localhost:629}
 WORKDIR /app
 
 # Copy dependency files first (caching optimization)

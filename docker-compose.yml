@@ -1,9 +1,6 @@
 services:
   portfolio:
-    build:
-      context: .
-      args:
-        SITE_URL: ${SITE_URL:-http://localhost:629}
+    build: .
     ports:
       - "629:80"
     restart: unless-stopped
